@@ -24,9 +24,10 @@ packages:
     git: https://github.com/lamdu/FreetypeGL
     commit: 286b75894e51b08b7c63f8845f045f66d27e9849
   extra-dep: True
-- location:
-    git: https://github.com/lamdu/nodejs-exec
-    commit: 614cfa868899f2dde5801e1b95d4bc43815e9851
+- location: /home/neo/Forks/nodejs-exec
+# - location:
+#     git: https://github.com/lamdu/nodejs-exec
+#     commit: 614cfa868899f2dde5801e1b95d4bc43815e9851
   extra-dep: True
 extra-deps:
 - bitmap-0.0.2
@@ -40,3 +41,22 @@ extra-deps:
 resolver: lts-10.0
 
 allow-newer: true
+
+nix:
+  enable: true
+  packages:
+  - leveldb
+  - glew
+  - glfw2
+  - xorg.libXext
+  - xorg.libXxf86vm
+  - xorg.libX11
+  - xorg.libXi
+  - xorg.libXrandr
+  - xorg.libXcursor
+  - xorg.libXinerama
+  - mesa_glu
+  - libglvnd
+  - zlib.dev
+  - zlib.out
+  - ncurses
