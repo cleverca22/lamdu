@@ -1,9 +1,9 @@
-{ stdenv, fetchFromGitHub, mesa, pkgconfig, cmake, freetype, glew, doxygen, glfw3, fontconfig, imagemagick, anttweakbar }:
+{ stdenv, fetchFromGitHub, mesa, pkgconfig, cmake, freetype, glew, doxygen, glfw3, fontconfig, imagemagick, anttweakbar, expat }:
 
 stdenv.mkDerivation rec {
   name = "FreetypeGL-2017-08-10";
 
-  buildInputs = [ mesa pkgconfig cmake freetype glew doxygen glfw3 fontconfig imagemagick anttweakbar ];
+  buildInputs = [ mesa pkgconfig cmake freetype glew doxygen glfw3 fontconfig imagemagick anttweakbar expat ];
 
   src = fetchFromGitHub {
     owner = "lamdu";

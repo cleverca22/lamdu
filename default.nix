@@ -1,5 +1,7 @@
 let config = {
-    packageOverrides = pkgs: {
+    packageOverrides = pkgs: rec {
+        freetype-gl = pkgs.callPackage ./freetype-gl.nix {};
+        anttweakbar = pkgs.callPackage ./AntTweakBar.nix {};
         haskellPackages = pkgs.haskellPackages.override {
             overrides = self: super: {
                 AlgoW = self.callPackage ./AlgoW.nix {};
@@ -8,8 +10,8 @@ let config = {
                 OpenGL = self.callPackage ./OpenGL.nix {};
                 imagemagick = pkgs.haskell.lib.doJailbreak super.imagemagick;
                 graphics-drawingcombinators = self.callPackage ./graphics-drawingcombinators.nix {};
-                freetype-gl = self.callPackage ./freetype-gl.nix {};
-                anttweakbar = self.callPackage ./AntTweakBar.nix {};
+                freetype-gl = self.callPackage ./FreetypeGL.nix {};
+                bindings-freetype-gl = self.callPackage ./bindings-freetype-gl.nix { GLEW = pkgs.glew; freetype-gl = freetype-gl; };
             };
         };
     };
